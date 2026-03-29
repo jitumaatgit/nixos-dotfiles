@@ -20,6 +20,7 @@
   jq
   eza
   fzf
+  lazygit
   
   # Networking tools
   mtr # A network diagnostic tool
@@ -30,9 +31,6 @@
   zstd
 
   # nix related
-  #
-  # it provides the command `nom` works just like `nix`
-  # with more details log output
   nix-output-monitor
 
   # productivity
@@ -50,25 +48,20 @@
       };
     };
   };
+
   # starship - a customizable prompt for any shell
   programs.starship = {
     enable = true;
-    # custom settings
     settings = {
       aws.disabled = true;
-      # disable line break between first and second prompt lines
       line_break.disabled = true;  
-
     };
   };
+
   programs.bash = {
     enable = true;
     enableCompletion = true;
-    # TODO add my custom bashrc here
-    bashrcExtra = ''
-      export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
-    '';
-
+    initExtra = "export PATH=\"$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin\"";
     shellAliases = {
      ls = "eza";
      grep = "rg";
