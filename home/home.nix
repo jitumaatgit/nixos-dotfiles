@@ -4,6 +4,10 @@
   home.username = "fomar";
   home.homeDirectory = "/home/fomar";
 
+  home.sessionVariables = {
+    GIT_CONFIG_GLOBAL = "$HOME/.config-git/gitconfig";
+  };
+
   home.packages = with pkgs; [
 
   neofetch
@@ -62,7 +66,7 @@
   programs.bash = {
     enable = true;
     enableCompletion = true;
-    initExtra = "export PATH=\"$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin\"";
+    initExtra = "export PATH=\"$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin\"\nmkdir -p \"$HOME/.config-git\"";
     shellAliases = {
      ls = "eza -a";
      grep = "rg";
