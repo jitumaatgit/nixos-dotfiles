@@ -66,7 +66,7 @@
     shellAliases = {
      ls = "eza";
      grep = "rg";
-     lazygit = "lg";
+     lg = "lazygit";
     };
   };
 
