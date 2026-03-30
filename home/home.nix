@@ -21,6 +21,7 @@
   eza
   fzf
   lazygit
+  gh
   
   # Networking tools
   mtr # A network diagnostic tool
