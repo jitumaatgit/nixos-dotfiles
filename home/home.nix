@@ -14,7 +14,7 @@
   yazi
 
   # Archives
-  p7zip
+  7zip
   zip
   unzip
   xz
@@ -43,15 +43,12 @@
   btop # process and system monitor
   ];
 
-  # Basic configuration of git
   programs.git = {
     enable = true;
-    settings = {
-      user = {
-        Name = "Jitu Maat";
-        Email = "jitumaat@protonmail.com";
-      };
-    };
+  };
+
+  home.file = {
+    ".config-git/gitconfig".source = ./files/.config-git/gitconfig;
   };
 
   # starship - a customizable prompt for any shell
@@ -66,7 +63,7 @@
   programs.bash = {
     enable = true;
     enableCompletion = true;
-    initExtra = "export PATH=\"$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin\"\nmkdir -p \"$HOME/.config-git\"";
+    initExtra = "export PATH=\"$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin\"\nmkdir -p \$HOME/.config-git\";
     shellAliases = {
      ls = "eza -a";
      grep = "rg";
