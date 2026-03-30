@@ -107,6 +107,12 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
+  # Symlink NixOS config files from dotfiles
+   systemd.tmpfiles.rules = [
+     "L /etc/nixos/configuration.nix - - - - /home/fomar/dotfiles/nixos/configuration.nix"
+     "L /etc/nixos/hardware-configuration.nix - - - - /home/fomar/dotfiles/nixos/hardware-configuration.nix"
+     "L /etc/nixos/flake.nix - - - - /home/fomar/dotfiles/flake.nix"
+   ];
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
   # accidentally delete configuration.nix.
