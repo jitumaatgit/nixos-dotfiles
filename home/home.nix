@@ -64,7 +64,7 @@
     enableCompletion = true;
     initExtra = "export PATH=\"$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin\"";
     shellAliases = {
-     ls = "eza";
+     ls = "eza -a";
      grep = "rg";
      lg = "lazygit";
     };
